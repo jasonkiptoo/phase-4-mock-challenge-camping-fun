@@ -4,7 +4,7 @@ import Home from "./Home";
 
 function App() {
   return (
-    <main>
+    <main> 
       <h1>
         <Link to="/">Camping Fun</Link>
       </h1>

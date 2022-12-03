@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Camper, type: :model do
-  
+
   describe "relationships" do
-      
+
     let(:camper) { Camper.create(name: 'Caitlin', age: 8) }
     let(:activity) { Activity.create(name: 'Archery', difficulty: 2) }
 
@@ -18,7 +18,7 @@ RSpec.describe Camper, type: :model do
 
       expect(camper.activities).to include(activity)
     end
-  
+
   end
 
   describe "validations" do

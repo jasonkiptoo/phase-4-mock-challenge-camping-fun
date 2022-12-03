@@ -7,7 +7,7 @@ RSpec.describe "Signups", type: :request do
   end
 
   describe "POST /signups" do
-    
+
     context "with valid data" do
       let!(:signup_params) { { camper_id: Camper.first.id, activity_id: Activity.first.id, time: 10 } }
 
@@ -50,7 +50,7 @@ RSpec.describe "Signups", type: :request do
 
       it 'returns a status code of 422 (Unprocessable Entity)' do
         post '/signups', params: signup_params
-  
+
         expect(response).to have_http_status(:unprocessable_entity)
       end
 

@@ -47,7 +47,7 @@ RSpec.describe "Campers", type: :request do
   end
 
   describe "GET /campers/:id" do
-    
+
     context "with a valid ID" do
 
       it "returns the matching camper with their associated activities" do
@@ -75,18 +75,18 @@ RSpec.describe "Campers", type: :request do
         get "/campers/#{Camper.first.id}"
         expect(response).to have_http_status(:ok)
       end
-      
+
     end
 
     context "with an invalid ID" do
-      
+
       it "returns an error message" do
         get "/campers/bad_id"
         expect(response.body).to include_json({
           error: "Camper not found"
         })
       end
-      
+
       it "returns the appropriate HTTP status code" do
         get "/campers/bad_id"
         expect(response).to have_http_status(:not_found)
@@ -97,7 +97,7 @@ RSpec.describe "Campers", type: :request do
   end
 
   describe "POST /campers" do
-    
+
     context "with valid data" do
       let!(:camper_params) { { name: "Zoe", age: 11 } }
 
@@ -110,7 +110,7 @@ RSpec.describe "Campers", type: :request do
 
         expect(response.body).to include_json({
           id: a_kind_of(Integer),
-          name: "Zoe", 
+          name: "Zoe",
           age: 11
         })
       end
@@ -140,7 +140,7 @@ RSpec.describe "Campers", type: :request do
 
       it 'returns a status code of 422 (Unprocessable Entity)' do
         post '/campers', params: camper_params
-  
+
         expect(response).to have_http_status(:unprocessable_entity)
       end
 

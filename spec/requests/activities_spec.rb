@@ -52,7 +52,7 @@ RSpec.describe "Activities", type: :request do
     end
 
     context "with an invalid ID" do
-      
+
       it "returns an error message" do
         delete "/activities/bad_id"
 
@@ -60,7 +60,7 @@ RSpec.describe "Activities", type: :request do
           error: "Activity not found"
         })
       end
-      
+
       it "returns the appropriate HTTP status code" do
         delete "/activities/bad_id"
 

@@ -21,6 +21,8 @@ function Home() {
   function handleAddCamper(newCamper) {
     setCampers((campers) => [...campers, newCamper]);
   }
+  console.log({activities});
+
 
   function handleDeleteActivity(id) {
     fetch(`/activities/${id}`, {
@@ -37,6 +39,7 @@ function Home() {
   return (
     <div>
       <h2>Activities</h2>
+
       <ul>
         {activities.map((activity) => (
           <li key={activity.id}>
@@ -57,9 +60,9 @@ function Home() {
             <span>
               {camper.name}, age {camper.age}
             </span>
-            <Link to={`/campers/${camper.id}`}>View Activities</Link>
+            <Link to={`/campers/${camper.id}`}>   <>  </>View Activities</Link>
           </li>
-        ))}
+         ))}
       </ul>
       <hr />
       <NewCamper onAddCamper={handleAddCamper} />

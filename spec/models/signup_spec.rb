@@ -6,7 +6,7 @@ RSpec.describe Signup, type: :model do
   let(:activity) { Activity.create(name: 'Archery', difficulty: 2) }
 
   describe "relationships" do
-    
+
     it 'can access the associated camper' do
       signup = Signup.create(camper_id: camper.id, activity_id: activity.id, time: 11)
 
@@ -18,7 +18,7 @@ RSpec.describe Signup, type: :model do
 
       expect(signup.activity).to eq(activity)
     end
-  
+
   end
 
   describe "validations" do
@@ -34,3 +34,4 @@ RSpec.describe Signup, type: :model do
   end
 
 end
+

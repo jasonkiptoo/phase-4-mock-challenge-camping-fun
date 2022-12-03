@@ -9,7 +9,7 @@ function NewSignup({ camperId, onAddActivity }) {
   useEffect(() => {
     fetch("/activities")
       .then((r) => r.json())
-      .then(setActivities);
+      .then(setActivities); 
   }, []);
 
   function handleSubmit(e) {
